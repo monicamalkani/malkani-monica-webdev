@@ -1,0 +1,25 @@
+.list-group-item{border: 0px;
+    overflow-wrap: break-word}
+
+
+.navbar-default{    background-color: inherit;
+}
+.navbar-default .navbar-brand{color:inherit}
+.img-fluid
+{max-width: 100%;
+    height: auto;
+    z-index: 1}
+.display-1{margin-top: 0%}
+.wrapper{position: relative}
+.glyphicon-group{
+    color: black;
+    background: white;
+    top:0%;
+    right: 0%;
+    position:absolute;
+    z-index: 2;}
+
+.glyphicon{
+    color: black;}
+.glyphicon-cog{color: cornflowerblue}
+.glyphicon-user{color: blue}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+</head>
+<style>
+    .vertical-line{
+        /* Use only border style */
+
+        height: 105%;
+        float: left;
+        border-right: 1px inset;
+        /* This is default border style for <hr> tag */
+    }
+    .web-left-pane{position: absolute;
+    top:0px;
+    bottom: 0px;
+        margin-top: 60px;
+        overflow: auto;}
+    .web-right-pane{position: absolute;
+        top:0px;
+        bottom: 0px;
+        margin-top: 60px;
+        right: 0px;}
+    #container1{margin-top: 0%;}
+    .list-group-item{border: hidden;}
+
+</style>
+<body>
+
+<nav class=" navbar navbar-default navbar-fixed-top">
+
+    <div class="row container-fluid">
+        <div class="col-xs-1 col-sm-1 col-md-1">
+            <div class="navbar-text pull-left" style="margin-left: 3%;">
+                <a href="website-list.html">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-3 hidden-xs">
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand" href="#">
+                    Websites
+                </a>
+            </div>
+
+
+            <div class="navbar-text pull-right" style="margin-right: 3%;">
+                <a href="#">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-xs-10 col-sm-8 col-md-8">
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand" href="#">
+                    Edit Website
+                </a>
+            </div>
+
+
+
+            <div class="navbar-text pull-right" style="margin-right: 3%;">
+                <a href="website-list.html">
+                    <span class="glyphicon glyphicon-ok "></span>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid col-md-4 col-sm-4 hidden-xs vertical-line web-left-pane" >
+
+
+
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-10 col-md-10 col-lg-10">
+                    <a href="#">
+                        Address Book App
+                    </a>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-10 col-md-10 col-lg-10">
+                    <a href="#">
+                        Blogger App
+                    </a>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-10 col-md-10 col-lg-10">
+                    <a href="#">
+                        Blogging
+                    </a>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+
+                    </a>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-sm-10 col-md-10 col-lg-10">
+                    <a href="#">
+                        Facebook
+                    </a>
+                </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    <a href="#">
+                        <span class="glyphicon glyphicon-cog pull-right"></span>
+
+                    </a>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<div class="container-fluid col-md-8 col-sm-8 col-xs-12 web-right-pane">
+
+    <label for="website-name">Website Name</label>
+    <input type="text"
+           class="form-control"
+           id="website-name"
+           placeholder="Name" value="Dummy data for blah blah"/>
+    <label>Website Description</label>
+    <textarea class="form-control" rows="6"
+              placeholder="Website description ">This is the description of website</textarea>
+
+    <a href="website-list.html" class="btn btn-danger btn-block">Delete</a>
+
+</div>
+
+
+<nav class=" navbar navbar-default navbar-fixed-bottom">
+    <div class="row container-fluid">
+        <div class="col-xs-8">
+        </div>
+        <div class="col-xs-4">
+            <div class="navbar-text pull-right" style="margin-right: 5%;">
+                <a href="../profile.html">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+</body>
+</html>

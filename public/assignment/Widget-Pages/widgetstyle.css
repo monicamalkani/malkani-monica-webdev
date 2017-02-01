@@ -6,7 +6,7 @@
 }
 .navbar-default .navbar-brand{color:inherit}
 .img-fluid
-{max-width: 100%;
+{   width: 100%;
     height: auto;
     z-index: 1}
 .display-1{margin-top: 0%}
@@ -18,7 +18,7 @@
     right: 0%;
     position:absolute;
     z-index: 2;
-    border-radius: 3px}
+    border-radius: 3px  }
 
 .glyphicon{
     color: black;}

@@ -11,23 +11,46 @@ a:hover {
 .vertical-line{
     /* Use only border style */
 
-    height: 105%;
-    float: left;
     border-right: 1px inset;
     /* This is default border style for <hr> tag */
 }
 #page-header-pull-right{margin-right: 3%}
 #page-header-pull-left{margin-left: 0%}
-.web-left-pane{position: absolute;
-    top:0px;
+.web-left-pane{
+    /*position: absolute;*/
+    /*top:0px;*/
+    /*bottom: 0px;*/
+    /*margin-top: 60px;*/
+    /*overflow: auto;*/
+
+
+    position: absolute;
+    top: 0px;
     bottom: 0px;
-    margin-top: 60px;
-    overflow: auto;}
-.web-right-pane{position: absolute;
-    top:0px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 15px;
+    overflow: auto;
+}
+.web-right-pane{
+    /*position: absolute;*/
+    /*top:0px;*/
+    /*bottom: 0px;*/
+    /*margin-top: 60px;*/
+    /*right: 0px;*/
+    /*overflow-y: auto;*/
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding-top: 15px;
     bottom: 0px;
-    margin-top: 60px;
-    right: 0px;}
+    margin-bottom: 52px;
+    margin-top: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow-y: auto;
+}
 #container1{margin-top: 0%;}
 .list-group-item{border: hidden;}
 
@@ -40,4 +63,5 @@ a:hover {
 body {
     padding-top: 60px;
     padding-bottom: 55px;
+
 }

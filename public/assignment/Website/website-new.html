@@ -7,35 +7,19 @@
         <link href="../css/style.css" rel="stylesheet"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <style>
-     .vertical-line{
-          /* Use only border style */
-
-         height: 105%;
-         float: left;
-         border-right: 1px inset; /* This is default border style for <hr> tag */
-     }
-     .container-fluid{height: 100%;  }
-     html{height: 100%}
-     body{height: 100%}
-     #container1{margin-top: 0%;}
-     .list-group-item{border: hidden;}
-
-    </style>
+   
     <body>
 
     <nav class=" navbar navbar-default navbar-fixed-top">
 
         <div class="row container-fluid">
-                <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                    <div class="navbar-text pull-left" style="margin-left: 3%;">
+                <div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
+                    <div class="navbar-text pull-left">
                         <a href="website-list.html">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </a>
                     </div>
-                </div>
 
-                <div class="col-md-3 col-sm-3 col-lg-3 hidden-xs">
                     <div class="navbar-header pull-left">
                         <a class="navbar-brand" href="#">
                             Websites
@@ -43,13 +27,19 @@
                     </div>
 
 
-                    <div class="navbar-text pull-right" style="margin-right: 4%;">
+                    <div class="navbar-text pull-right" >
                             <a href="#">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </a>
                     </div>
                 </div>
-
+                <div class="col-xs-1 hidden-lg hidden-md hidden-sm">
+                    <div class="navbar-text pull-left" >
+                        <a href="website-list.html">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                    </div>
+                </div>
                 <div class="col-xs-10 col-sm-8 col-md-8">
                     <div class="navbar-header pull-left">
                         <a class="navbar-brand" href="#">
@@ -59,7 +49,7 @@
 
 
 
-                    <div class="navbar-text pull-right" style="margin-right: 3%;">
+                    <div class="navbar-text pull-right" >
                         <a href="website-list.html">
                             <span class="glyphicon glyphicon-ok "></span>
                         </a>
@@ -70,7 +60,8 @@
         </div>
     </nav>
 
-        <div class="container-fluid col-md-4 col-sm-4 hidden-xs vertical-line" >
+<div class="container-fluid col-md-4 col-sm-4 hidden-xs vertical-line web-left-pane" >
+
 
 
            <ul class="list-group">
@@ -138,7 +129,7 @@
 
         </div>
 
-        <div class="container-fluid col-md-8 col-sm-8 col-xs-12">
+<div class="container-fluid col-md-8 col-sm-8 col-xs-12 web-right-pane">
 
             <label for="website-name">Name</label>
             <input type="text"

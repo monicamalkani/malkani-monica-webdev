@@ -5,44 +5,21 @@
     <title>Title</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../css/style.css" rel="stylesheet"/>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<style>
-    .vertical-line{
-        /* Use only border style */
 
-        height: 105%;
-        float: left;
-        border-right: 1px inset;
-        /* This is default border style for <hr> tag */
-    }
-    .web-left-pane{position: absolute;
-    top:0px;
-    bottom: 0px;
-        margin-top: 60px;
-        overflow: auto;}
-    .web-right-pane{position: absolute;
-        top:0px;
-        bottom: 0px;
-        margin-top: 60px;
-        right: 0px;}
-    #container1{margin-top: 0%;}
-    .list-group-item{border: hidden;}
-
-</style>
 <body>
 
 <nav class=" navbar navbar-default navbar-fixed-top">
 
     <div class="row container-fluid">
-        <div class="col-xs-1 col-sm-1 col-md-1">
-            <div class="navbar-text pull-left" style="margin-left: 3%;">
+       <div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
+            <div class="navbar-text pull-left" >
                 <a href="website-list.html">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
-        </div>
-
-        <div class="col-md-3 col-sm-3 hidden-xs">
+       
             <div class="navbar-header pull-left">
                 <a class="navbar-brand" href="#">
                     Websites
@@ -50,13 +27,19 @@
             </div>
 
 
-            <div class="navbar-text pull-right" style="margin-right: 3%;">
+            <div class="navbar-text pull-right" >
                 <a href="#">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
             </div>
         </div>
-
+                <div class="col-xs-1 hidden-lg hidden-md hidden-sm">
+                    <div class="navbar-text pull-left" >
+                        <a href="website-list.html">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                    </div>
+                </div>
         <div class="col-xs-10 col-sm-8 col-md-8">
             <div class="navbar-header pull-left">
                 <a class="navbar-brand" href="#">
@@ -66,7 +49,7 @@
 
 
 
-            <div class="navbar-text pull-right" style="margin-right: 3%;">
+            <div class="navbar-text pull-right">
                 <a href="website-list.html">
                     <span class="glyphicon glyphicon-ok "></span>
                 </a>

@@ -1,7 +1,7 @@
 .list-group-item{border: 0px;
     overflow-wrap: break-word}
 
-
+#widget--header-pull-left{margin-left: 3%;}
 .navbar-default{    background-color: inherit;
 }
 .navbar-default .navbar-brand{color:inherit}

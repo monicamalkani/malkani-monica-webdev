@@ -16,7 +16,8 @@ a:hover {
     border-right: 1px inset;
     /* This is default border style for <hr> tag */
 }
-
+#page-header-pull-right{margin-right: 3%}
+#page-header-pull-left{margin-left: 0%}
 .web-left-pane{position: absolute;
     top:0px;
     bottom: 0px;

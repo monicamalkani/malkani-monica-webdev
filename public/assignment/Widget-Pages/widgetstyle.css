@@ -14,6 +14,7 @@
 .glyphicon-group{
     color: black;
     background: white;
+    opacity: 0.9;
     top:0%;
     right: 0%;
     position:absolute;

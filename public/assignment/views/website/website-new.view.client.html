@@ -1,22 +1,11 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Title</title>
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="../css/style.css" rel="stylesheet"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-   
-    <body>
+
 
     <nav class=" navbar navbar-default navbar-fixed-top">
 
         <div class="row container-fluid">
                 <div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
                     <div class="navbar-text pull-left">
-                        <a href="website-list.html">
+                        <a href="website-list.view.client.html">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </a>
                     </div>
@@ -29,14 +18,14 @@
 
 
                     <div class="navbar-text pull-right" >
-                            <a href="#">
+                            <a href="#/user/{{model.userId}}/website/new">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </a>
                     </div>
                 </div>
                 <div class="col-xs-1 hidden-lg hidden-md hidden-sm">
                     <div class="navbar-text pull-left" >
-                        <a href="website-list.html">
+                        <a href="">
                             <span class="glyphicon glyphicon-chevron-left"></span>
                         </a>
                     </div>
@@ -51,7 +40,7 @@
 
 
                     <div class="navbar-text pull-right" >
-                        <a href="website-list.html">
+                        <a ng-click="model.createWebsite(model.userId,newwebsite)">
                             <span class="glyphicon glyphicon-ok "></span>
                         </a>
                     </div>
@@ -64,69 +53,23 @@
     <div class="row container-fluid">
     <div class=" col-md-4 col-sm-4 hidden-xs vertical-line web-left-pane" >
 
-
-
            <ul class="list-group">
-               <li class="list-group-item">
+               <li ng-repeat="website in model.websites" class="list-group-item">
                        <div class="row">
                        <div class="col-sm-10 col-md-10 col-lg-10">
-                           <a href="#">
-                               Address Book App
+                           <a href="#/user/{{model.userId}}/website/{{website._id}}/page">
+                              {{website.name}}
                            </a>
                        </div>
                            <div class="col-sm-2 col-md-2 col-lg-2">
-                           <a href="#">
+                           <a href="#/user/{{model.userId}}/website/{{website._id}}">
                                <span class="glyphicon glyphicon-cog pull-right"></span>
 
                            </a>
                          </div>
                        </div>
                </li>
-               <li class="list-group-item">
-                   <div class="row">
-                       <div class="col-sm-10 col-md-10 col-lg-10">
-                           <a href="#">
-                               Blogger App
-                           </a>
-                       </div>
-                       <div class="col-sm-2 col-md-2 col-lg-2">
-                           <a href="#">
-                               <span class="glyphicon glyphicon-cog pull-right"></span>
 
-                           </a>
-                       </div>
-                   </div>
-               </li>
-               <li class="list-group-item">
-                   <div class="row">
-                       <div class="col-sm-10 col-md-10 col-lg-10">
-                           <a href="#">
-                               Blogging
-                           </a>
-                       </div>
-                       <div class="col-sm-2 col-md-2 col-lg-2">
-                           <a href="#">
-                               <span class="glyphicon glyphicon-cog pull-right"></span>
-
-                           </a>
-                       </div>
-                   </div>
-               </li>
-               <li class="list-group-item">
-                   <div class="row">
-                       <div class="col-sm-10 col-md-10 col-lg-10">
-                           <a href="#">
-                               Facebook
-                           </a>
-                       </div>
-                       <div class="col-sm-2 col-md-2 col-lg-2">
-                           <a href="#">
-                               <span class="glyphicon glyphicon-cog pull-right"></span>
-
-                           </a>
-                       </div>
-                   </div>
-               </li>
            </ul>
 
         </div>
@@ -134,12 +77,14 @@
 <div class=" col-md-8 col-sm-8 col-xs-12 web-right-pane">
 
             <label for="website-name">Name</label>
-            <input type="text"
+            <input  ng-model="newwebsite.name"
+                    type="text"
                    class="form-control"
                    id="website-name"
                    placeholder="Name"/>
             <label>Description</label>
-            <textarea class="form-control" rows="6"
+            <textarea ng-model="newwebsite.description"
+                    class="form-control" rows="6"
                    placeholder="Description "></textarea>
 
         </div>
@@ -151,7 +96,7 @@
             </div>
             <div class="col-xs-4">
                 <div class="navbar-text pull-right">
-                    <a href="../profile.html">
+                    <a href="../views/user/profile.view.client.html">
                         <span class="glyphicon glyphicon-user"></span>
                     </a>
                 </div>
@@ -159,6 +104,3 @@
         </div>
 
     </nav>
-
-    </body>
-    </html>

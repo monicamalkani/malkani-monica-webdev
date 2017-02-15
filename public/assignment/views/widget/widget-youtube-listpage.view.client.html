@@ -1,5 +1,5 @@
 <div class="row wrapper">
-    <iframe width="100%"  ng-src="{{model.getYouTubeEmbedUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
+    <iframe width="{{widget.width}}"  ng-src="{{model.getYouTubeEmbedUrl(widget.url)}}" frameborder="0" allowfullscreen></iframe>
     <div class="glyphicon-group">
         <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
             <span class="glyphicon glyphicon-cog glyphicon-widget"></span>

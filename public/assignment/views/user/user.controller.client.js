@@ -30,10 +30,13 @@
 
     function profileController($routeParams,$location,UserService) {
         var vm=this;
-        var userId=$routeParams['uid'];
-        vm.userId=userId;
         vm.updateUser=updateUser;
         vm.deleteUser=deleteUser;
+
+        var userId=$routeParams['uid'];
+        vm.userId=userId;
+
+
 
         function init() {
             var user=UserService.findUserById(userId);
@@ -65,6 +68,7 @@
 
         var vm=this;
         vm.register=register;
+
         function init() {
 
         }

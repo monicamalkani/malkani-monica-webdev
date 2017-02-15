@@ -4,7 +4,7 @@
     <div class="row container-fluid">
         <div class="col-xs-10">
             <div class="navbar-text pull-left">
-                <a href="widget-list.view.client.html">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
@@ -17,7 +17,7 @@
         </div>
         <div class="col-xs-2">
             <div class="navbar-text pull-right" >
-                <a href="widget-list.view.client.html">
+                <a ng-click="model.updateWidget(model.widget)">
                     <span class="glyphicon glyphicon-ok"></span>
                 </a>
             </div>
@@ -38,18 +38,22 @@
     <input type="text"
            class="form-control"
            id="widget-name"
+           value="IMAGE"
     />
     <label>Text</label>
-    <input type="text"
+    <input  ng-model="model.widget.text"
+            type="text"
            class="form-control"
     />
     <label>URL</label>
-    <input type="text"
+    <input   ng-model="model.widget.url"
+            type="text"
            class="form-control"
            value="https://www.google.com/search?q=images&espv=2&biw=753&bih=970&source=lnms"
     />
     <label>Width</label>
-    <input type="text"
+    <input   ng-model="model.widget.width"
+            type="text"
            class="form-control"
             value="100%"
     />
@@ -59,7 +63,7 @@
 
     />
     <a class="btn btn-primary btn-block">Upload Image</a>
-    <a href="widget-list.view.client.html" class="btn btn-danger btn-block">Delete</a>
+    <a ng-click="model.delete()" class="btn btn-danger btn-block">Delete</a>
 
 </div>
 
@@ -70,7 +74,7 @@
         </div>
         <div class="col-xs-4">
             <div class="navbar-text pull-right">
-                <a href="../views/user/profile.view.client.html">
+                <a href="#/user/{{model.userId}}">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>

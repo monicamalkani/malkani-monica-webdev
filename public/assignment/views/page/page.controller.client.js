@@ -6,10 +6,11 @@
         .controller("EditPageController",EditPageController);
 
     function PageListController($routeParams,PageService) {
+        var vm=this;
         var websiteId=$routeParams['wid'];
         var userId=$routeParams['uid'];
+
         var pages=PageService.findPageByWebsiteId(websiteId);
-        var vm=this;
         vm.pages=pages;
         vm.userId=userId;
         vm.websiteId=websiteId;

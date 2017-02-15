@@ -78,9 +78,11 @@
                 if(users[u]._id==userId)
                 {
                     users.splice(users.indexOf(users[u]),1);
+                    return true;
                 }
 
             }
+            return null;
 
         }
 

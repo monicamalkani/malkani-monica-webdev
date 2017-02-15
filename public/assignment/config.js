@@ -62,18 +62,18 @@
             })
             .when("/user/:uid/website/:wid/page/:pid/widget",{
                 templateUrl: "views/widget/widget-list.view.client.html",
-                controller:"",
-                controllerAs:""
+                controller:"WidgetListController",
+                controllerAs:"model"
             })
             .when("/user/:uid/website/:wid/page/:pid/widget/new",{
                 templateUrl: "views/widget/widget-chooser.view.client.html",
-                controller:"",
-                controllerAs:""
+                controller:"NewWidgetController",
+                controllerAs:"model"
             })
             .when("/user/:uid/website/:wid/page/:pid/widget/:wgid",{
                 templateUrl: "views/widget/widget-edit.view.client.html",
-                controller:"",
-                controllerAs:""
+                controller:"EditWidgetController",
+                controllerAs:"model"
             })
     }
     

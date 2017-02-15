@@ -4,20 +4,20 @@
     <div class="row container-fluid">
         <div class="col-xs-10">
             <div class="navbar-text pull-left">
-                <a  href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </div>
             <div class="navbar-header pull-left">
-                <a class="navbar-brand pull-left" href="#">
+                <a class="navbar-brand pull-left" >
                     Widget Edit
                 </a>
 
             </div>
         </div>
         <div class="col-xs-2">
-            <div class="navbar-text pull-right">
-                <a ng-click="model.updateWidget(model.widget)">
+            <div class="navbar-text pull-right" style="margin-left: 3%;">
+                <a  ng-click="model.updateWidget(model.widget)">
                     <span class="glyphicon glyphicon-ok"></span>
                 </a>
             </div>
@@ -34,28 +34,15 @@
 
 <div class="container-fluid ">
 
-    <label for="widget-name">Name</label>
-    <input type="text"
-           class="form-control"
-           id="widget-name"
-           value="YOUTUBE VIDEO"
-    />
-    <label>Text</label>
-    <input type="text"
-           class="form-control"
-           ng-model="model.widget.text"
-           />
-    <label>URL</label>
-    <input type="text"
-           class="form-control"
-           value="https://www.google.com/search?q=images&espv=2&biw=753&bih=970&source=lnms"
-           ng-model="model.widget.url">
-    <label>Width</label>
-    <input type="text"
-           class="form-control"
-           ng-model="model.widget.width"
 
+
+    <label>Text</label>
+    <input  ng-model="model.widget.text"
+            type="text"
+            class="form-control"
+            placeholder="some data"
     />
+
     <a ng-click="model.delete()" class="btn btn-danger btn-block">Delete</a>
 
 </div>
@@ -66,7 +53,7 @@
         <div class="col-xs-8">
         </div>
         <div class="col-xs-4">
-            <div class="navbar-text pull-right">
+            <div class="navbar-text pull-right" style="margin-right: 5%;">
                 <a href="#/user/{{model.userId}}">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
@@ -75,4 +62,5 @@
     </div>
 
 </nav>
+
 

@@ -65,3 +65,41 @@ body {
     padding-bottom: 55px;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar-default.nav-bar-widget{background-color: white;}
+#widget-brand{color:black}
+.img-fluid
+{   width: 100%;
+    height: auto;
+    z-index: 1}
+
+.display-1{margin-top: 0%}
+.wrapper{position: relative}
+.glyphicon-group{
+    color: black;
+    background: white;
+    opacity: 0.9;
+    top:0%;
+    right: 0%;
+    position:absolute;
+    z-index: 2;
+    border-radius: 3px  }
+.cog-widget{color: cornflowerblue}
+.glyphicon.glyphicon-align-justify{color:black}
+.glyphicon.widget-class{color: black}

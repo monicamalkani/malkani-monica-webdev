@@ -22,6 +22,7 @@
                    vm.widgets = widgets;
 
                })
+
         }
         init();
 

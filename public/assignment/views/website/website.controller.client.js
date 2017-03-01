@@ -3,19 +3,20 @@
         .module("WebAppMaker")
         .controller("WebsiteListController",WebsiteListController)
         .controller("NewWebsiteController",NewWebsiteController)
-        .controller("EditWebisteController",EditWebisteController);
+        .controller("EditWebisteController",EditWebsiteController);
 
     function WebsiteListController($routeParams,WebsiteService) {
         var vm=this;
         var userId=$routeParams['uid'];
+        vm.userId=userId;
 
         function init() {
-            var websites=WebsiteService.findWebsitesByUser(userId);
-            vm.websites=websites;
+            WebsiteService.findWebsitesByUser(userId)
+                .success(function (websites) {
+                    vm.websites=websites;
+                });
         }
         init();
-
-        vm.userId=userId;
 
     }
     function NewWebsiteController($routeParams,WebsiteService,$location) {
@@ -26,27 +27,30 @@
         var userId=$routeParams['uid'];
 
         function init() {
-            var websites=WebsiteService.findWebsitesByUser(userId);
-            vm.websites=websites;
+            WebsiteService.findWebsitesByUser(userId)
+                .success(function (websites) {
+                    vm.websites=websites;
+                });
         }
         init();
 
         var websiteId=$routeParams['wid'];
-
-
         vm.userId=userId;
-        vm.website=WebsiteService.findWebsiteById(websiteId);
 
 
 
         function createWebsite(userId,newwebsite) {
-            websites=WebsiteService.createWebsite(userId,newwebsite);
-            if(websites)
-            {
-                $location.url("/user/"+userId+"/website");
-            }
-            else
-            {}
+            WebsiteService.createWebsite(userId,newwebsite)
+                .success(function (websites) {
+                    if(websites)
+                    {
+                        $location.url("/user/"+userId+"/website");
+                    }
+                    else
+                    {}
+
+                });
+
 
 
         }
@@ -54,7 +58,7 @@
 
     }
 
-    function EditWebisteController($routeParams,$location,WebsiteService) {
+    function EditWebsiteController($routeParams,$location,WebsiteService) {
 
         var vm=this;
         vm.delete=websitedelete;
@@ -64,46 +68,51 @@
         var websiteId=$routeParams['wid'];
 
         function init() {
-            vm.website=WebsiteService.findWebsiteById(websiteId);
+            WebsiteService.findWebsiteById(websiteId)
+                .success(function (website) {
+                    vm.website = website;
+                });
+
+            WebsiteService.findWebsitesByUser(userId)
+                        .success(function (websites) {
+                            vm.websites=websites;
+                });
+
 
         }
         init();
-        var websites=WebsiteService.findWebsitesByUser(userId);
-        vm.websites=websites;
 
-
-
-
-        vm.userId=userId;
 
 
 
         function websitedelete() {
-            var deleted=WebsiteService.deleteWebsite(websiteId);
-            if(deleted)
-            {
-                $location.url("/user/"+userId+"/website");
-            }
-            else
-            {}
+            WebsiteService.deleteWebsite(websiteId)
+                .success(function (deleted) {
+                    if(deleted)
+                    {
+                        $location.url("/user/"+userId+"/website");
+                    }
+                    else
+                    {}
 
+                });
         }
 
         function updateWebsite(website)
         {
-            var updatedwebsite=WebsiteService.updateWebsite(websiteId,website);
-            if(updatedwebsite)
-            {
-                $location.url("/user/"+userId+"/website");
-            }
-            else
-            {}
+            WebsiteService.updateWebsite(websiteId,website)
+                .success(function (updatedwebsite) {
+                    if(updatedwebsite)
+                    {
+                        $location.url("/user/"+userId+"/website");
+                    }
+                    else
+                    {}
+
+                });
+
         }
 
 
     }
-
-
-
-
 })();

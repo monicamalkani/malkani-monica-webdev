@@ -17,7 +17,11 @@
         vm.pageId = $routeParams.pid;
 
         function init() {
-            vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+           WidgetService.findWidgetsByPageId(vm.pageId)
+               .success(function (widgets) {
+                   vm.widgets = widgets;
+
+               })
         }
         init();
 
@@ -56,26 +60,40 @@
         vm.widgetId=widgetId;
         function init() {
 
-            vm.widget=WidgetService.findWidgetById(widgetId);
+            WidgetService.findWidgetById(widgetId)
+                .success(function (widget) {
+                    vm.widget=widget;
+
+                });
         }
         init();
 
 
         function deleteWidget() {
 
-            var deletewg=WidgetService.deleteWidget(widgetId);
-            if(deletewg)
-                $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget");
-            else
-            {}
+            WidgetService.deleteWidget(widgetId)
+                .success(function (deletewg) {
+                    var deletewg=deletewg;
+                    if(deletewg)
+                        $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget");
+                    else
+                    {}
+
+                });
+
 
         }
         function updateWidget(widget) {
-            var updatedwidget=WidgetService.updateWidget(widgetId,widget);
-            if(updatedwidget)
-                $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget");
-            else
-            {}
+            WidgetService.updateWidget(widgetId,widget)
+                .success(function (updatedwidget) {
+                    var updatedwidget=updatedwidget;
+                    if(updatedwidget)
+                        $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget");
+                    else
+                    {}
+
+                });
+
 
         }
 
@@ -100,38 +118,56 @@
         function createWidget(type) {
             if(type==='html')
             {var widget={widgetType:"HTML", pageId:pageId , size:3, text:"LOREN IPSUM" };
-             var newwidget=WidgetService.createWidget(pageId, widget);
-                if(newwidget)
-                    $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
-                else
-                {}
+             WidgetService.createWidget(pageId, widget)
+                 .success(function (newwidget) {
+                     var newwidget=newwidget;
+                     if(newwidget)
+                         $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
+                     else
+                     {}
+
+                 });
 
             }
             else  if(type==='image')
             {var widget={widgetType:"IMAGE", pageId:pageId , width:"100%" , url:"http://lorempixel.com/400/200/" };
-                var newwidget=WidgetService.createWidget(pageId, widget);
-                if(newwidget)
-                    $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
-                else
-                {}
+                WidgetService.createWidget(pageId, widget)
+                    .success(function (newwidget) {
+                        var newwidget=newwidget;
+                        if(newwidget)
+                            $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
+                        else
+                        {}
+                    });
+
 
             }
             if(type==='heading')
             {var widget={widgetType:"HEADING", pageId:pageId , size:3, text:"LOREN IPSUM" };
-                var newwidget=WidgetService.createWidget(pageId, widget);
-                if(newwidget)
-                    $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
-                else
-                {}
+                WidgetService.createWidget(pageId, widget)
+                    .success(function (newwidget) {
+                        var newwidget=newwidget;
+                        if(newwidget)
+                            $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
+                        else
+                        {}
+
+                    });
+
 
             }
             if(type==='youtube')
             {var widget={widgetType:"YOUTUBE", pageId:pageId , width:"100%" , url:"https://youtu.be/AM2Ivdi9c4E"  };
-                var newwidget=WidgetService.createWidget(pageId, widget);
-                if(newwidget)
-                    $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
-                else
-                {}
+                WidgetService.createWidget(pageId, widget)
+                    .success(function (newwidget) {
+                        var newwidget=newwidget;
+                        if(newwidget)
+                            $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
+                        else
+                        {}
+
+                    });
+
 
             }
             else

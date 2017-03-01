@@ -18,13 +18,17 @@
         init();
 
         function login(user) {
-            var user = UserService.findUserByCredentials(user.username, user.password);
-            if(user)
-            {
-                $location.url("/user/"+user._id);
+            var promise = UserService.findUserByCredentials(user.username, user.password);
+            promise.success(function (response) {
+                var loginUser=response;
+                if(loginUser)
+                {
+                    $location.url("/user/"+loginUser._id);
 
-            }else
-            {vm.error="user not found";}
+                }else
+                {vm.error="user not found";}
+            });
+
         }
     }
 
@@ -39,28 +43,49 @@
 
 
         function init() {
-            var user=UserService.findUserById(userId);
-            vm.user =user;
+            var promise=UserService.findUserById(userId);
+            promise.success(function (user) {
+                vm.user =user;
+            });
+
         }
         init();
+
         function updateUser(newUser) {
-            var user=UserService.updateUser(userId,newUser);
-            if(user!=null)
-            {vm.message="user successfully updated";}
-            else
-            {vm.error="unable to update user";}
+            UserService
+              .updateUser(userId,newUser)
+              .success(function (user) {
+                  if(user!=null)
+                  {vm.message="user successfully updated";}
+                  else
+                  {vm.error="unable to update user";}
+
+              });
 
         }
         function deleteUser() {
+            UserService
+                .deleteUser(userId)
+                .success(function(user){
 
-            var user=UserService.deleteUser(userId);
-            if(user!=null)
-            {vm.message="user successfully deleted";
-                $location.url("/");
+                    if(user!=null)
+                    {vm.message="user successfully deleted";
+                        $location.url("/");
 
-            }
-            else
-            {vm.error="unable to delete user";}
+                    }
+                    else
+                    {vm.error="unable to delete user";}
+
+                });
+            //
+            // var user=UserService.deleteUser(userId);
+            // if(user!=null)
+            // {vm.message="user successfully deleted";
+            //     $location.url("/");
+            //
+            // }
+            // else
+            // {vm.error="unable to delete user";}
         }
 
     }
@@ -74,13 +99,34 @@
         }
         init();
         function register(user) {
-            var user=UserService.createUser(user);
-            if(user)
-            {
-                $location.url("/user/"+user._id);
-            }
-            else
-                vm.error="User not created successfully!"
+
+            UserService.findUserByUsername(user.username)
+                .success(function (user) {
+                   vm.message="User name already taken!"
+                })
+                .error(function (err) {
+                   vm.message="Available";
+                });
+
+            UserService.createUser(user)
+                .success(function (user) {
+                    if(user)
+                    {
+                        $location.url("/user/"+user._id);
+                        vm.message="User created successfully";
+                    }
+                    else
+                        vm.error="User not created successfully!"
+
+
+                });
+            // var user=UserService.createUser(user);
+            // if(user)
+            // {
+            //     $location.url("/user/"+user._id);
+            // }
+            // else
+            //     vm.error="User not created successfully!"
         }
 
     }

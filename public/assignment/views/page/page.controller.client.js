@@ -11,8 +11,11 @@
         var userId=$routeParams['uid'];
 
         function init() {
-            var pages=PageService.findPageByWebsiteId(websiteId);
-            vm.pages=pages;
+           PageService.findPageByWebsiteId(websiteId)
+           .success(function (pages) {
+               vm.pages=pages;
+            })
+
         }
         init();
 
@@ -31,8 +34,10 @@
         var websiteId=$routeParams['wid'];
 
         function init() {
-            var pages=PageService.findPageByWebsiteId(websiteId);
-            vm.pages=pages;
+            PageService.findPageByWebsiteId(websiteId)
+                .success(function (pages) {
+                    vm.pages=pages;
+            })
         }
         init();
 
@@ -42,15 +47,16 @@
 
 
         function createPage(websiteId,newpage) {
-            pages=PageService.createPage(websiteId,newpage);
-            if(pages)
-            {
-                $location.url("/user/"+userId+"/website"+websiteId+"/page");
-            }
-            else
-            {}
+            PageService.createPage(websiteId,newpage)
+                .success(function (pages) {
+                    if(pages)
+                    {
+                        $location.url("/user/"+userId+"/website/"+websiteId+"/page");
+                    }
+                    else
+                    {}
 
-
+                });
         }
 
 
@@ -67,47 +73,52 @@
         var pageId=$routeParams['pid'];
 
         function init() {
-            vm.page=PageService.findPageById(pageId);
+           PageService.findPageById(pageId)
+               .success(function (page) {
+                   vm.page=page;
+               });
+           PageService.findPageByWebsiteId(websiteId)
+                .success(function (pages) {
+                    vm.pages=pages;
+        });
         }
+
         init();
 
-        var pages=PageService.findPageByWebsiteId(websiteId);
-        vm.pages=pages;
         vm.websiteId=websiteId;
 
         vm.userId=userId;
         vm.pageId=pageId;
 
 
-
-
         function deletePage() {
-            var deleted=PageService.deletePage(pageId);
-            if(deleted)
-            {
-                $location.url("/user/"+userId+"/website/"+websiteId+"/page");
-            }
-            else
-            {}
-
+          PageService.deletePage(pageId)
+              .success(function (deleted) {
+                  if(deleted)
+                  {
+                      $location.url("/user/"+userId+"/website/"+websiteId+"/page");
+                  }
+                  else
+                  {}
+              })
         }
 
 
         function updatePage(page)
         {
-            var updatedpage=PageService.updatePage(pageId,page);
-            if(updatedpage)
-            {
-                $location.url("/user/"+userId+"/website/"+websiteId+"/page");
-            }
-            else
-            {}
+            PageService.updatePage(pageId,page)
+                .success(function (updatedpage) {
+                    if(updatedpage)
+                    {
+                        $location.url("/user/"+userId+"/website/"+websiteId+"/page");
+                    }
+                    else
+                    {}
+                })
+
         }
 
 
-    }
 
-
-
-
+}
 })();

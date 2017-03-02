@@ -41,9 +41,6 @@ module.exports=function(app){
         var index2=parseInt(req.query['final']);
         var pid = req.params.pageId;
 
-
-
-        //var pid = req.params.pid;
         var index1 = parseInt(req.query.initial);
         var index2 = parseInt(req.query.final);
 
@@ -160,6 +157,8 @@ module.exports=function(app){
         var userId        = req.body.userId;
         var websiteId     = req.body.websiteId;
         var myFile        = req.file;
+        if(myFile)
+        {
         var destination   = myFile.destination; // folder where file is saved to
 
         for (var i in widgets) {
@@ -170,7 +169,7 @@ module.exports=function(app){
             }
         }
 
-        res.redirect("/assignment/#/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/"+ widgetId);
+        res.redirect("/assignment/#/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/"+ widgetId);}
     }
 
 

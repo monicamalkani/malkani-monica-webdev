@@ -167,9 +167,9 @@ module.exports=function(app){
                 widgets[i].url = req.protocol + '://' +req.get('host')+"/uploads/"+myFile.filename;
                 pageId = widgets[i].pageId;
             }
-        }
+        }}
 
-        res.redirect("/assignment/#/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/"+ widgetId);}
+        res.redirect("/assignment/#/user/" + userId + "/website/" + websiteId + "/page/" + pageId + "/widget/"+ widgetId);
     }
 
 

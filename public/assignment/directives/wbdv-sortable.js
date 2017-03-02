@@ -6,9 +6,9 @@
 
 
     function sortableDir($routeParams,WidgetService) {
-        var pageId=$routeParams.pid;
-        function linkFunc(scope, element, attributes) {
 
+        function linkFunc(scope, element, attributes) {
+            var pageId=$routeParams.pid;
             var index1=-1;
             var index2=-1;
 
@@ -27,14 +27,10 @@
 
 
                         })
-
                 }
 
 
             });
-
-
-
 
         }
         return {

@@ -9,7 +9,7 @@
                 </a>
             </div>
             <div class="navbar-header pull-left">
-                <a class="navbar-brand pull-left" id="widget-brand" href="#">
+                <a class="navbar-brand pull-left" id="widget-brand" href="">
                     Widget Edit
                 </a>
 
@@ -33,6 +33,11 @@
 
 
 <div class="container-fluid ">
+    <form action="/api/upload"  method="post" enctype="multipart/form-data">
+        <input  name="widgetId" value="{{model.widget._id}}"   style="display: none"/>
+        <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+        <input  name="userId" value="{{model.userId}}"   style="display: none"/>
+        <input  name="pageId" value="{{model.pageId}}"   style="display: none"/>
 
     <label for="widget-name">Name</label>
     <input type="text"
@@ -60,11 +65,11 @@
     <label>Upload</label>
     <input type="file"
            class="form-control"
-
+           name="myFile"
     />
-    <a class="btn btn-primary btn-block">Upload Image</a>
+    <button type="submit" class="btn btn-primary btn-block">Upload Image</button>
     <a ng-click="model.delete()" class="btn btn-danger btn-block">Delete</a>
-
+    </form>
 </div>
 
 

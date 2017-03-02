@@ -4,12 +4,7 @@
         .factory("UserService",userService);
 
     function userService($http) {
-        var users=[
-            {_id: "123", username: "alice",   email:"alice@gmail.com" ,   password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
-            {_id: "234", username: "bob",     email:"bob@gmail.com" , password: "bob",      firstName: "Bob",    lastName: "Marley"  },
-            {_id: "345", username: "charly",  email:"charly@gmail.com" , password: "charly",   firstName: "Charly", lastName: "Garcia"  },
-            {_id: "456", username: "jannunzi",email:"jannuzi@gmail.com" , password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
-        ];
+
 
         var api={
             "createUser":createUser,

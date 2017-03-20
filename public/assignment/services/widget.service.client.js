@@ -40,7 +40,9 @@
         }
 
         function findWidgetById(widgetId) {
-          return angular.copy($http.get("/api/widget/"+widgetId));
+
+          return $http.get("/api/widget/"+widgetId);
+
         }
     }
 })();

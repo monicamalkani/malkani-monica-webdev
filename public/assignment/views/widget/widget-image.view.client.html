@@ -45,11 +45,11 @@
            id="widget-name"
            value="IMAGE"
     />
-    <!--<label>Text</label>-->
-    <!--<input  ng-model="model.widget.text"-->
-            <!--type="text"-->
-           <!--class="form-control"-->
-    <!--/>-->
+    <label>Text</label>
+    <input  ng-model="model.widget.text"
+            type="text"
+           class="form-control"
+    />
     <label>URL</label>
     <input   ng-model="model.widget.url"
             type="text"
@@ -69,7 +69,8 @@
            value="https://www.google.com/search?q=images&espv=2&biw=753&bih=970&source=lnms"
     />
     <button type="submit" class="btn btn-primary btn-block">Upload Image</button>
-    <a ng-click="model.delete()" class="btn btn-danger btn-block">Delete</a>
+        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{model.widget._id}}/searchflickr" class="btn btn-primary btn-block">Search Image</a>
+        <a ng-click="model.delete()" class="btn btn-danger btn-block">Delete</a>
     </form>
 </div>
 
@@ -86,6 +87,5 @@
             </div>
         </div>
     </div>
-
 </nav>
 

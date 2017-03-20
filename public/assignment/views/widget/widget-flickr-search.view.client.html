@@ -1,0 +1,54 @@
+<nav class=" navbar navbar-default navbar-fixed-top nav-bar-widget">
+    <div class="row container-fluid">
+        <div class="col-xs-12">
+            <div class="navbar-text pull-left">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
+                    <span class="glyphicon glyphicon-chevron-left widget-class"></span>
+                </a>
+            </div>
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand pull-left" id="widget-brand" href="">
+                    Search Flickr
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</nav>
+<div class="input-group">
+    <input ng-model="searchText" type="text" class="form-control">
+    <span class="input-group-btn">
+        <a ng-click="model.searchPhotos(searchText)" class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search widget-class"></span>
+        </a>
+    </span>
+</div>
+
+
+
+<div class="row">
+    <div class="col-xs-4" ng-repeat="photo in model.photos.photo">
+            <img ng-click="model.selectPhoto(photo)"
+             ng-src="https://farm{{photo.farm}}.staticflickr.com/{{photo.server}}/{{photo.id}}_{{photo.secret}}_s.jpg"/>
+    </div>
+</div>
+
+
+
+<nav class=" navbar navbar-default navbar-fixed-bottom nav-bar-widget">
+    <div class="row container-fluid">
+        <div class="col-xs-8">
+        </div>
+        <div class="col-xs-4">
+            <div class="navbar-text pull-right">
+                <a href="#/user/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user widget-class"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+

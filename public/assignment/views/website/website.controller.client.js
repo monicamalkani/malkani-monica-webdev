@@ -66,7 +66,7 @@
 
         var userId=$routeParams['uid'];
         var websiteId=$routeParams['wid'];
-
+        vm.userId=userId;
         function init() {
             WebsiteService.findWebsiteById(websiteId)
                 .success(function (website) {

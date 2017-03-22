@@ -49,7 +49,7 @@ function createWidget(pageId, widget) {
                                     deffered.reject();
                                 else
 
-                                {  // console.log("pppp"+widgetnew)
+                                {  //console.log("pppp"+widgetnew)
                                     deffered.resolve(widgetnew);}
                             });
                         });

@@ -173,6 +173,20 @@
 
 
             }
+            if(type==='text')
+            {var widget={widgetType:"TEXT", pageId:pageId ,rows:2 ,text:"LOREN IPSUM" ,formatted:true,placeholder:"text"};
+                WidgetService.createWidget(pageId, widget)
+                    .success(function (newwidget) {
+                        var newwidget=newwidget;
+                        if(newwidget)
+                            $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
+                        else
+                        {}
+
+                    });
+
+
+            }
             else
 
             return null;

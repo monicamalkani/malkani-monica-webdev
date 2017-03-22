@@ -65,10 +65,11 @@ body {
     padding-bottom: 55px;
 
 }
-.form-control
-{height: 100%}
 
 
+.text-angular{height: 100%}
+.ta-scroll-window{
+    height:100%;}
 .youtube-widget {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */

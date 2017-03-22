@@ -36,7 +36,7 @@
 
       <ul  class="list-group" wbdv-sortable="">
 
-          <LI ng-switch="widget.widgetType" ng-repeat="widget in model.widgets" class="list-group-item">
+          <LI ng-switch="widget.type" ng-repeat="widget in model.widgets" class="list-group-item">
               <div ng-switch-when="HEADING">
                   <ng-include src="'views/widget/widget-heading-listpage.view.client.html'"></ng-include>
               </div>

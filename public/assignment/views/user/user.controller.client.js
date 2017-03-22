@@ -19,14 +19,17 @@
 
         function login(user) {
             var promise = UserService.findUserByCredentials(user.username, user.password);
+
             promise.success(function (response) {
                 var loginUser=response;
                 if(loginUser)
-                {
-                    $location.url("/user/"+loginUser._id);
+                {   console.log(loginUser[0].username);
+                    console.log(loginUser);
+                    $location.url("/user/"+loginUser[0]._id);
 
                 }else
-                {vm.error="user not found";}
+                {
+                    vm.error="user not found";}
             });
 
         }
@@ -67,7 +70,6 @@
             UserService
                 .deleteUser(userId)
                 .success(function(user){
-
                     if(user!=null)
                     {vm.message="user successfully deleted";
                         $location.url("/");

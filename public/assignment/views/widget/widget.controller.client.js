@@ -76,7 +76,9 @@
                 .success(function (deletewg) {
                     var deletewg=deletewg;
                     if(deletewg)
-                        $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget");
+                    {console.log("errooor");
+                    console.log(deletewg);
+                        $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget");}
                     else
                     {}
 
@@ -125,7 +127,7 @@
                      if(newwidget)
                          $location.url("/user/"+userId+"/website/"+websiteId+"/page/"+pageId+"/widget/"+newwidget._id);
                      else
-                     {}
+                     {console.log("error");}
 
                  });
 

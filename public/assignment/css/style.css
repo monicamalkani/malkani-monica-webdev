@@ -117,3 +117,11 @@ body {
 .cog-widget{color: cornflowerblue}
 .glyphicon.glyphicon-align-justify{color:black}
 .glyphicon.widget-class{color: black}
+
+
+
+.navbar-default.mypage{background-color: black}
+.navbar-default.mypage .navbar-nav>a {
+    color: white;
+    font-family:Arial;
+}

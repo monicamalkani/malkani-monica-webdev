@@ -140,6 +140,7 @@ module.exports=function(app) {
                 console.log(widget);
                 res.json(widget);
             }, function (error) {
+                console.log(error);
                 res.sendStatus(500).send(error);
             });
 

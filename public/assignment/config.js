@@ -5,6 +5,9 @@
 
     function configuration($routeProvider) {
         $routeProvider
+            .when("/mypage",{
+                templateUrl: "views/homepage/mypage.html"
+            })
             .when("/",{
                 templateUrl: "views/user/login.view.client.html",
                 controller:"LoginController",
@@ -80,6 +83,7 @@
                 controller:"FlickrImageSearchController",
                 controllerAs:"model"
             })
+
     }
     
 })();

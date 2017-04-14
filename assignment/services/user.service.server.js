@@ -120,15 +120,15 @@ module.exports=function(app){
 
 
     function updateUser(req,res) {
-        var userId=req.params.uid;
-        var user=req.body;
-        userModel
-            .updateUser(user,userId)
-            .then(function (user) {
-                res.json(user);
-            }, function (error) {
-                res.sendStatus(500).send(error);
-            });
+            var userId=req.params.uid;
+            var user=req.body;
+            userModel
+                .updateUser(user,userId)
+                .then(function (user) {
+                    res.json(user);
+                }, function (error) {
+                    res.sendStatus(500).send(error);
+                });
 
         // for(var u in users)
         // {

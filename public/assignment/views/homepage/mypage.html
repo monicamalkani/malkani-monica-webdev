@@ -1,0 +1,216 @@
+<style>
+    body{overflow-x:hidden }
+   .intro {
+
+       text-align: center;
+       color: #f8f8f8;
+       font-size: 0.7em ;
+       background: url(some.jpg) no-repeat center center;
+        background-size:cover ;
+       padding-top: 10%;
+       padding-bottom: 8%
+   ;
+
+   }
+   .intro-divider {
+       width: 400px;
+       border-top: 1px solid #f8f8f8;
+       border-bottom: 1px solid rgba(0,0,0,0.2);
+   }
+   .intro-bck{
+       padding-top: 40%;
+           /*padding-bottom: 50px;*/
+           /*background: url(some.jpg) no-repeat center center;*/
+           /*background-size: cover;*/
+           /*-webkit-filter: blur(5px);*/
+           /*-moz-filter: blur(13px);*/
+           /*-o-filter: blur(13px);*/
+           /*-ms-filter: blur(13px);*/
+           /*filter: blur(2px);*/
+   }
+
+   .intro-message > h1 {
+       margin-top: -30%;
+       text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+       font-size: 8em;
+   }
+    .headertext
+    {color: white;
+    font-size: 2em}
+    .mypage
+    {font-size: 1em}
+    .mypageheader
+    {font-family: 'Pacifico', cursive;
+    font-size: 2em}
+</style>
+<script>
+    $(".aboutme").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".skills").offset().top},
+            'slow');
+    });
+    $(".project").click(function() {
+        $('html,body').animate({
+                scrollTop: $(".projects").offset().top},
+            'slow');
+    });
+
+</script>
+<script>
+    $(document).ready(function() {
+        $('.progress .progress-bar').css("width",
+            function() {
+                return $(this).attr("aria-valuenow") + "%";
+            }
+        )
+    });
+</script>
+
+<nav class="navbar navbar-default  navbar-fixed-top mypage">
+    <div class="container-fluid mypageheader">
+        <div class="row">
+            <!--<div class="col-lg-5 col-md-5 col-sm-5 col-xs-4">-->
+                <!--<div class="navbar-header">-->
+                    <!--<a class="navbar-brand">Monica Malkani</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="col-lg-6 col-md-6 col-xs-4" style="text-align:right ">
+                <div>
+                    <a class="assignment navbar-brand btn btn-lg">
+                       <span class="network-name">Assignments</span></a>
+                </div>
+
+
+            </div>
+            <div class="col-xs-3" style="text-align:right ">
+                <div>
+                    <a  class="navbar-brand btn btn-lg project">
+                        <span class="network-name">Project</span></a>
+                </div>
+
+            </div>
+            <div class="col-xs-3" style="text-align:right ">
+                <div>
+                    <a  class="navbar-brand btn btn-lg aboutme">
+                        About Me</a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</nav>
+<div class="intro">
+    <div class="container">
+        <div class="intro-bck"></div>
+         <div class="row">
+            <div class="col-lg-12">
+                <div class="intro-message">
+                    <h1>Monica Malkani</h1>
+                    <h3>Get to know me</h3>
+                    <hr class="intro-divider">
+                    <ul class="list-inline intro-social-buttons">
+                        <li>
+                            <a href="https://github.com/monicamalkani/malkani-monica-webdev"
+                               class="btn btn-default btn-lg"><i class="fa fa-github fa-fw">
+                                 </i> <span class="network-name">Github</span></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/monicamalkani/" class="btn btn-default btn-lg">
+                                <i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div></div>
+<br><br>
+
+
+
+<div>
+<div class="container-fluid skills">
+    <div class="row well">
+            <div class="COL-LG-6 col-md-6 col-sm-6 col-xs-6">
+            <h3>SKILLS</h3>
+
+            <div class="progress skill-bar ">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                    <span class="skill">JAVA <i class="val">85%</i></span>
+                </div>
+            </div>
+
+            <div class="progress skill-bar">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" >
+                    <span class="skill">HTML 40%</span>
+                </div>
+            </div>
+
+            <div class="progress skill-bar">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                    <span class="skill">PYTHON 75%</span>
+                </div>
+            </div>
+
+            <div class="progress skill-bar">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                    <span class="skill">ANGULAR 55%</span>
+                </div>
+            </div>
+
+                <div class="progress skill-bar">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">CSS 55%</span>
+                    </div>
+                </div>
+                <div class="progress skill-bar">
+                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        <span class="skill">BOOTSTRAP 55%</span>
+                    </div>
+                </div>
+
+
+        </div>
+        <div class="COL-LG-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="card">
+                <img class="responsive card-img-top " src="monica.jpg" width="50%" height="50%" alt="Card image cap">
+                <div class="card-block mypageheader">
+                    <h4 class="card-title mypageheader ">About me</h4>
+                    <p class="card-text">I am currently pursuing my Master's in Computer Science from Northeastern University.
+                        Prior to this I have done my Bachelor's in Computer Engineering from University of Mumbai.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<div>
+    <div class="container-fluid projects">
+        <div class="row well">
+            <div class="COL-LG-6 col-md-6 col-sm-6 col-xs-6">
+                <img class="responsive card-img-top" src="monica.jpg"
+                     width="70%" height="50%" alt="Card image cap">
+
+            </div>
+            <div class="COL-LG-6 col-md-6 col-sm-6 col-xs-6">
+
+                <div class=" mypageheader">
+                    <h4 class="card-title mypageheader">OOTA</h4>
+                    <p>
+                        Hungry? Oder Food anytime anywhere. Just with one click have food delivered to you.<br>
+                        Successfully implemented crowd source food delivery System.
+                    </p>
+                    <a class="btn btn-primary" href="#"> Go To Oota</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
